@@ -1,0 +1,14 @@
+<% if @books.present? %>
+  <% @books.each do |book| %>
+    <div class="list">
+      <% if book.image_url != nil %>
+        <%= link_to (image_tag(book.image_url, style: "width: 70px;height: 100px;display: inline-block;", alt: "#{book.title}")), book.url %>
+      <% else %>
+        <p style="width: 70px;height: 100px;display: inline-block;border: 1px solid">画像なし</p>
+      <% end %>
+      <p>タイトル : <%= book.title %></p>
+      <p>著者 : <%= book.author %></p>
+      <p>---------------------------------------------------</p>
+    </div>
+  <% end %>
+<% end %>
